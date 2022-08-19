@@ -15,8 +15,13 @@ list_of_lists = [
 # print(func(list_of_lists))
 
 
-def func2(db):
-    return list(map(lambda x: x if x[1] >= 100 else (x[0], x[1] + 10), map(lambda x: (x[0], round(x[2] * x[3], 2)), db)))
+# def func2(db):
+#     return list(map(lambda x: x if x[1] >= 100 else (x[0], x[1] + 10), map(lambda x: (x[0], round(x[2] * x[3], 2)), db)))
 
 
-print(func2(list_of_lists))
+# Переделал строку, чтобы работала без второй пары map-lambda
+def func3(db):
+    return list(map(lambda x: (x[0], round(x[2] * x[3] + (0 if x[2] * x[3] >= 100 else 10), 2)), db))
+
+
+print(func3(list_of_lists))
