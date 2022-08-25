@@ -13,17 +13,11 @@ class DigitalCounter:
 
     # Увеличение счётчика на 1
     def increase(self):
-        if self.current is None:
-            self.current = self.start + 1
-            return
-        if self.current < self.end:
-            self.current += 1
-            return
+        if self.current is not None:
+            if self.current < self.end:
+                self.current += 1
         else:
-            # На случай если необходимо обнулять счётчик,
-            # когда он доходит до максимума
-            # self.current = self.start
-            return f'We get max count: {self.end}'
+            self.current = self.start + 1
 
     # Вывод текущего значения счётчика в терминал
     def get_current_value(self):
