@@ -1,4 +1,6 @@
-src_string = 'red car is parked right behind another car and blue building with red walls and blue door cat python tiger tiger python kiwi'
+import re
+src_string = 'Red car is parked right behind another car and blue building (with red walls) and blue door?\n Cat, python, tiger. Tiger, python-kiwi!'
+src_string = re.sub('[()!@#$\n-.,?]', ' ', src_string)    # Удаление пунктуации
 my_dict = {}
 
 for word in src_string.lower().split():
