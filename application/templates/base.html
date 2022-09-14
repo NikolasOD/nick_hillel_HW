@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTC rates - {% block title %}Base page{% endblock %}</title>
+</head>
+<body>
+    <div>
+      <strong style="color: darkorange">BTC Rates</strong><br><br>
+         <form method="get" action="{{ url_for('search_rates') }}">
+            <label>
+                <input placeholder="Type currency code or name..." name="currency">
+            </label>
+            <button type="submit">Search</button>
+        </form>
+        <p style="color: darkgray">for example "USD" or "US Dollar"</p>
+    </div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

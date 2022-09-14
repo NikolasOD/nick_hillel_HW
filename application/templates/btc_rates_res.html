@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search rates result
+{% endblock %}
+
+{% block content %}
+    <h1 style="color: darkorange">Search rates result for Bitcoin / {{ rate["name"] }}</h1>
+    <p style="font-size: 30px">
+        1 <b>BTC</b> = {{ rate["rate"] }} <b>{{ rate["code"] }}</b>
+    </p>
+{% endblock %}

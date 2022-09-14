@@ -130,3 +130,5 @@ dmypy.json
 
 # Other
 .idea/
+utils.py
+views.py
